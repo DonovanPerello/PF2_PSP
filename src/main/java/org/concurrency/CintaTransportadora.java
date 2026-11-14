@@ -9,16 +9,16 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class CintaTransportadora {
-    private int aforoBaterias;
-    private Lock candado = new ReentrantLock();
-    private Condition cintaNoPlena = candado.newCondition();
-    private Condition cintaNoBuida = candado.newCondition();
-    private List<Bateria> baterias = new ArrayList<>();
-    private ConsoleView consoleView;
+    private final int aforoBaterias;
+    private final Lock candado = new ReentrantLock();
+    private final Condition cintaNoPlena = candado.newCondition();
+    private final Condition cintaNoBuida = candado.newCondition();
+    private final List<Bateria> baterias = new ArrayList<>();
 
-    public CintaTransportadora(int aforoBaterias, ConsoleView consoleView) {
+
+    public CintaTransportadora(int aforoBaterias) {
         this.aforoBaterias = aforoBaterias;
-        this.consoleView = consoleView;
+
     }
     public void meterBateriaEnCinta(Bateria bateria)  throws InterruptedException{
         candado.lock();

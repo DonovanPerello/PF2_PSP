@@ -18,7 +18,7 @@ public class MainApp {
 
         //CONCURRENCY-------------------------------------------------------------
         CentralSoldadura centralSoldadura = new CentralSoldadura(3);
-        CintaTransportadora cintaTransportadora = new CintaTransportadora(3,consoleView);
+        CintaTransportadora cintaTransportadora = new CintaTransportadora(3);
         SupervisorCentral supervisorCentral = new SupervisorCentral(consoleView);
         //CONCURRENCY-------------------------------------------------------------
 

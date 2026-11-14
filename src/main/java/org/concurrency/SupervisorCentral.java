@@ -4,7 +4,7 @@ import org.view.ConsoleView;
 
 public class SupervisorCentral {
     private boolean alertaActivada = false;
-    private ConsoleView consoleView;
+    private final ConsoleView consoleView;
 
     public SupervisorCentral(ConsoleView consoleView) {
         this.consoleView = consoleView;

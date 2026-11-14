@@ -7,12 +7,12 @@ import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.Semaphore;
 
 public class CentralSoldadura {
-    private int numPlazas;
-    private Semaphore aforo;
-    private boolean[] mesaSoldadura;
-    private PriorityBlockingQueue<RobotRef> prioridadEnergia;
+    private final int numPlazas;
+    private final Semaphore aforo;
+    private final boolean[] mesaSoldadura;
+    private final PriorityBlockingQueue<RobotRef> prioridadEnergia;
 
-    private Semaphore aforoFirma =  new Semaphore(1);
+    private final Semaphore aforoFirma =  new Semaphore(1);
 
     public CentralSoldadura(int numPlazas) {
         this.numPlazas = numPlazas;
