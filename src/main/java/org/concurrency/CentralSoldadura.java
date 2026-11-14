@@ -1,9 +1,8 @@
 package org.concurrency;
 
-import org.bateries.Bateria;
-import java.util.ArrayList;
+import org.resources.RobotRef;
+
 import java.util.Comparator;
-import java.util.List;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.Semaphore;
 
@@ -12,7 +11,7 @@ public class CentralSoldadura {
     private Semaphore aforo;
     private boolean[] mesaSoldadura;
     private PriorityBlockingQueue<RobotRef> prioridadEnergia;
-    public record RobotRef(int id, int energia) {}
+
     private Semaphore aforoFirma =  new Semaphore(1);
 
     public CentralSoldadura(int numPlazas) {
@@ -24,9 +23,9 @@ public class CentralSoldadura {
     }
 
     Comparator<RobotRef> comparadorEnergia = (p1, p2) -> {
-        if ( p1.energia< p2.energia) {
+        if ( p1.energia()< p2.energia()) {
             return -1;
-        } else if (p1.energia>p2.energia)  {
+        } else if (p1.energia()>p2.energia())  {
             return 1;
         }
         return 0;
@@ -91,7 +90,10 @@ public class CentralSoldadura {
     private void firmarRegistro(){
 
         try {
+
             aforoFirma.acquire();
+
+
             Thread.sleep(400);
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -1,6 +1,6 @@
 package org.tasks;
 
-import org.bateries.Bateria;
+import org.resources.Bateria;
 import org.concurrency.CintaTransportadora;
 import org.concurrency.SupervisorCentral;
 import org.view.ConsoleView;

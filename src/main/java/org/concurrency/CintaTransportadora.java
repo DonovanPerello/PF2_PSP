@@ -1,8 +1,7 @@
 package org.concurrency;
-import org.bateries.Bateria;
+import org.resources.Bateria;
 import org.view.ConsoleView;
 
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Condition;
