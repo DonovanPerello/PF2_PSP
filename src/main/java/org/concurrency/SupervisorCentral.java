@@ -33,4 +33,5 @@ public class SupervisorCentral {
     public boolean isAlertaActivada() {
         return alertaActivada;
     }
+
 }
